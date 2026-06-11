@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Save_Plate7 - BIT216 Assignment 1" company="BIT216 Software Engineering Principles" webLink="https://github.com/shekharbhatt69/Save_Plate7" view-date="2026-04-19" view-index="0" version="3.4.3394" locale="en_NP">
+    <description><![CDATA[SavePlate - Smart Food Waste Reduction App
+Assignment Released: 18 May 2026
+Task 1: 30 May - 12 June 2026 | Task 2: 12 June - 26 June 2026
+Team: Shekhar Bhatt (Project Manager), Manish Bhatta (Developer), Nikhil Tamrakar (Designer)
+Saturdays are non-working days.]]></description>
+    <view zooming-state="default:5" id="gantt-chart">
+        <field id="tpd3" name="Name" width="401" order="0"/>
+        <field id="tpd4" name="Begin date" width="111" order="1"/>
+        <field id="tpd5" name="End date" width="111" order="2"/>
+        <field id="tpd6" name="Duration" width="76" order="3"/>
+        <field id="tpd12" name="Cost" width="258" order="4"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+        <option id="divider" value="0.5704678362573099"/>
+        <filters>
+            <filter title="filter.completedTasks" description="" is-built-in="true" is-enabled="false"/>
+            <filter title="filter.dueTodayTasks" description="" is-built-in="true" is-enabled="false"/>
+            <filter title="filter.overdueTasks" description="" is-built-in="true" is-enabled="false"/>
+            <filter title="filter.inProgressTodayTasks" description="" is-built-in="true" is-enabled="false"/>
+        </filters>
+        <option id="color.recent"><![CDATA[#1f3864 #2e75b6 #1e7145 #4b0082 #c55a11 #c00000]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="780" order="0"/>
+        <field id="1" name="Default role" width="297" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="0" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="1" uid="0899d77520714fd78aaad54b9c937459" name="PRE-PLANNING" color="#1f3864" meeting="false" start="2026-05-18" duration="11" complete="0" expand="true">
+            <task id="2" uid="de039e35aacd4173b56e222f9e799540" name="Read Assignment Brief and Case Study" color="#2e75b6" meeting="false" start="2026-05-18" duration="2" complete="0" expand="true"/>
+            <task id="3" uid="c0fc49a925f4498cacabb860fb35c16c" name="Team Formation and Role Assignment" color="#2e75b6" meeting="false" start="2026-05-20" duration="2" complete="0" expand="true"/>
+            <task id="4" uid="bd88693edf2f4cdd832faaa8803a60bd" name="GitHub Repo Setup and Branch Creation" color="#2e75b6" meeting="false" start="2026-05-22" duration="1" complete="0" expand="true"/>
+            <task id="5" uid="02a6fd7c1cf84a1ebc4e64b7b5b43b14" name="Study All 6 Use Cases in Detail" color="#2e75b6" meeting="false" start="2026-05-24" duration="4" complete="0" expand="true"/>
+            <task id="6" uid="2609bade65f34942934337b3573ac263" name="Create GanttProject Baseline File" color="#2e75b6" meeting="false" start="2026-05-28" duration="2" complete="0" expand="true"/>
+        </task>
+        <task id="7" uid="13b95675b26e4a29b8df4fe68be185a9" name="M0: Pre-Planning Complete" color="#ffc000" meeting="true" start="2026-05-29" duration="0" complete="0" expand="true"/>
+        <task id="8" uid="154f0e9d8fff461e9e15d522ef26d743" name="TASK 1 - PROJECT PLAN / PROPOSAL (30 May - 12 Jun)" color="#1f3864" meeting="false" start="2026-05-31" duration="12" complete="0" expand="true">
+            <task id="9" uid="86a233bd0d604771b168b1d34958a3e8" name="Phase 1: Research and Content Drafting" color="#1f3864" meeting="false" start="2026-05-31" duration="5" complete="0" expand="true">
+                <task id="10" uid="8829ed51be1c4605bc931451df514057" name="1.1 Research Nepali Food Waste Data" color="#2e75b6" meeting="false" start="2026-05-31" duration="2" complete="0" expand="true"/>
+                <task id="11" uid="2c2f4ef01a0249d3b93aa24acab69aae" name="1.2 Draft Section 1 - Overview" color="#2e75b6" meeting="false" start="2026-06-02" duration="3" complete="0" expand="true"/>
+                <task id="12" uid="12711b3fbdf646a383144a7afefcf653" name="1.3 Draft Sections 2-3 - Aims and Objectives" color="#2e75b6" meeting="false" start="2026-06-02" duration="3" complete="0" expand="true"/>
+                <task id="13" uid="538607e6426b4ee3b44c69b977c93f5f" name="1.4 Draft Section 4 - Project Scope" color="#2e75b6" meeting="false" start="2026-06-02" duration="3" complete="0" expand="true"/>
+            </task>
+            <task id="14" uid="71e1f9f6a7c048df86f8d31b05063a73" name="Phase 2: Schedule Development" color="#1f3864" meeting="false" start="2026-06-05" duration="4" complete="0" expand="true">
+                <task id="15" uid="175cd2841d7e4725890b410dc23cc6f5" name="2.1 Develop WBS Table" color="#1e7145" meeting="false" start="2026-06-05" duration="2" complete="0" expand="true"/>
+                <task id="16" uid="0829087641084aa18d3306460f23b7f7" name="2.2 Build and Export Gantt Chart" color="#1e7145" meeting="false" start="2026-06-08" duration="2" complete="0" expand="true"/>
+                <task id="17" uid="605750994a4f4ffaa33ebf84fbdec7fe" name="2.3 Milestones and Deliverables Table" color="#1e7145" meeting="false" start="2026-06-05" duration="2" complete="0" expand="true"/>
+            </task>
+            <task id="18" uid="a644ae9975474f558c937eb32bb9026a" name="Phase 3: Technical Description" color="#1f3864" meeting="false" start="2026-06-05" duration="4" complete="0" expand="true">
+                <task id="19" uid="9f76e5ea91794ec487e71f9df56f25bc" name="3.1 Dev Platform Tools Table - Sec 6.1" color="#4b0082" meeting="false" start="2026-06-08" duration="2" complete="0" expand="true"/>
+                <task id="20" uid="b373095a3c0045e09ab8d55fde65a830" name="3.2 Hardware Specification Table - Sec 6.2" color="#4b0082" meeting="false" start="2026-06-05" duration="2" complete="0" expand="true"/>
+                <task id="21" uid="ae671e9d81454ec483ee891d9a90e55e" name="3.3 Demonstration Platform Table - Sec 6.3" color="#4b0082" meeting="false" start="2026-06-08" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="22" uid="1ddead90f6c945269ecea6438f0076bb" name="Phase 4: Risk Management Plan" color="#1f3864" meeting="false" start="2026-06-09" duration="2" complete="0" expand="true">
+                <task id="23" uid="8e66bcd6753c49329b5cb1c083a1b264" name="4.1 Group Risk Brainstorm Session" color="#c55a11" meeting="false" start="2026-06-09" duration="1" complete="0" expand="true"/>
+                <task id="24" uid="bbbe7e95602c444ba87c52335fac09c8" name="4.2 Risk Rows 1-3 - Shekhar" color="#c55a11" meeting="false" start="2026-06-10" duration="1" complete="0" expand="true"/>
+                <task id="25" uid="0d1bc8a9bcc0430f9d6b495acb3883d8" name="4.3 Risk Rows 4-5 - Manish" color="#c55a11" meeting="false" start="2026-06-10" duration="1" complete="0" expand="true"/>
+                <task id="26" uid="2ff57ddab80347e7b81dd9c967a49f7c" name="4.4 Risk Rows 6-7 - Nikhil" color="#c55a11" meeting="false" start="2026-06-10" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="27" uid="2564970e1d6540de9a038cb6ca133223" name="Phase 5: Review and Finalisation" color="#1f3864" meeting="false" start="2026-06-11" duration="2" complete="0" expand="true">
+                <task id="28" uid="154bda65e9584a0791cc7ac086d70f1c" name="5.1 Peer Review Formatting Plagiarism Check" color="#c00000" meeting="false" start="2026-06-11" duration="1" complete="0" expand="true"/>
+                <task id="29" uid="8332915676dd4b7fb7f2e303cf00931c" name="5.2 Insert Gantt PNG Final Commit and Submit" color="#c00000" meeting="false" start="2026-06-12" duration="1" complete="0" expand="true"/>
+            </task>
+        </task>
+        <task id="30" uid="a36470e09d3c4a26b6b2f83d41947ea9" name="TASK 1 SUBMISSION - 12 June 5:00 PM" color="#c00000" meeting="true" start="2026-06-12" duration="0" complete="0" expand="true"/>
+        <task id="31" uid="4a4150677f124aff9fb1fe76cc63a558" name="TASK 2 - REQUIREMENTS AND DESIGN (12 - 26 Jun)" color="#1f3864" meeting="false" start="2026-06-12" duration="13" complete="0" expand="true">
+            <task id="32" uid="825efd7cc446466d809ef00b54b86fb8" name="Phase A: Requirements Definition" color="#1f3864" meeting="false" start="2026-06-12" duration="4" complete="0" expand="true">
+                <task id="33" uid="ef8147e4938540d79723195e868d04f5" name="A.1 Functional Requirements Table" color="#006b6b" meeting="false" start="2026-06-12" duration="3" complete="0" expand="true"/>
+                <task id="34" uid="cf68f2ff2a744ac5b482027f34573880" name="A.2 Non-Functional Requirements Table" color="#006b6b" meeting="false" start="2026-06-16" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="35" uid="9804425ed7d54fca94de3d508625a071" name="Phase B: User Stories - Individual Work" color="#1f3864" meeting="false" start="2026-06-17" duration="4" complete="0" expand="true">
+                <task id="36" uid="d1a9b389cac04e5ba9679c797ab8602e" name="B.1 Shekhar - Epic and Stories UC1 and UC4" color="#2e75b6" meeting="false" start="2026-06-17" duration="4" complete="0" expand="true"/>
+                <task id="37" uid="a9aa7444702347d89ddd3a329cadcc13" name="B.2 Manish - Epic and Stories UC2 and UC5" color="#2e75b6" meeting="false" start="2026-06-17" duration="4" complete="0" expand="true"/>
+                <task id="38" uid="2ee67954a01e480aa31fecc911a67b10" name="B.3 Nikhil - Epic and Stories UC3 and UC6" color="#2e75b6" meeting="false" start="2026-06-17" duration="4" complete="0" expand="true"/>
+            </task>
+            <task id="39" uid="26f61d20b72e416e981dc50357e2b32d" name="Phase C: Design Specification - Group Work" color="#1f3864" meeting="false" start="2026-06-22" duration="2" complete="0" expand="true">
+                <task id="40" uid="d7b84fb0a55743f894245e9a3f779786" name="C.1 Deployment Diagram and Site Map" color="#4b0082" meeting="false" start="2026-06-22" duration="1" complete="0" expand="true"/>
+                <task id="41" uid="349be2e479ad44c596e97990e930cc9b" name="C.2 ERD and Wireframes" color="#4b0082" meeting="false" start="2026-06-22" duration="2" complete="0" expand="true"/>
+                <task id="42" uid="2a2f2eab0eeb43e9ad55379efbee5d0b" name="C.3 Data Dictionary - Database Design" color="#4b0082" meeting="false" start="2026-06-23" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="43" uid="21ebf4385c9b42fb8e140de1993801ea" name="Phase D: Review and Finalisation" color="#1f3864" meeting="false" start="2026-06-24" duration="3" complete="0" expand="true">
+                <task id="44" uid="02b80325620e43cbb9d6554dfc96d154" name="D.1 Peer Review - All Task 2 Sections" color="#c00000" meeting="false" start="2026-06-24" duration="1" complete="0" expand="true"/>
+                <task id="45" uid="ce6c49b0c8254452b7e38ba2862463e2" name="D.2 Formatting References Plagiarism Check" color="#c00000" meeting="false" start="2026-06-25" duration="1" complete="0" expand="true"/>
+                <task id="46" uid="9ec8c8eb8ed6403fb34324450ba4b385" name="D.3 Final Commit and Submit Task 2" color="#c00000" meeting="false" start="2026-06-26" duration="1" complete="0" expand="true"/>
+            </task>
+        </task>
+        <task id="47" uid="1df76bede5a74586a02a5fc003da6b33" name="TASK 2 SUBMISSION - 26 June 5:00 PM" color="#c00000" meeting="true" start="2026-06-26" duration="0" complete="0" expand="true"/>
+    </tasks>
+    <resources>
+        <resource id="0" name="Shekhar Bhatt (Project Manager)" function="Default:1" contacts="shekhar.bhatt@midvalley.edu.np" phone="986768118"/>
+        <resource id="1" name="Manish Bhatta (Developer)" function="2" contacts="manish.bhatta@midvalley.edu.np" phone="9742519855"/>
+        <resource id="2" name="Nikhil Tamrakar (Designer)" function="1" contacts="nikhil.tamrakar@midvalley.edu.np" phone="9840356938"/>
+    </resources>
+    <allocations>
+        <allocation task-id="2" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="3" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="4" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="5" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="6" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="10" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="11" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="15" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="16" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="23" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="24" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="28" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="29" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="33" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="34" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="36" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="40" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="42" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="44" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="46" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="7" resource-id="0" function="Default:1" responsible="false" load="100.0"/>
+        <allocation task-id="2" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="3" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="5" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="10" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="12" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="17" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="19" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="23" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="25" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="28" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="33" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="34" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="37" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="40" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="42" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="44" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="45" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="7" resource-id="1" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="2" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="3" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="5" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="10" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="13" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="20" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="21" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="23" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="26" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="28" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="33" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="34" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="38" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="41" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="44" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="46" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="7" resource-id="2" function="2" responsible="false" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles>
+        <role id="1" name="designer"/>
+        <role id="2" name="developer"/>
+    </roles>
+</project>
