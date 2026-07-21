@@ -86,25 +86,18 @@
                 </p>
             </div>
 
-            <!-- simulated 2FA Verification View -->
+            <!-- 2FA Verification View (real TOTP authenticator app code) -->
             <div id="auth-2fa-box" class="auth-box hidden">
                 <h2>2FA Verification</h2>
-                <p class="subtitle">A simulated 6-digit verification code has been sent to your email.</p>
-                
-                <!-- Simulated Email Box Graphic -->
-                <div style="background-color: var(--accent-amber-bg); border: 1.5px dashed var(--accent-amber); padding: 15px; border-radius: var(--radius-sm); margin-bottom: 24px; text-align: center;">
-                    <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; font-weight: 500;">[SIMULATED EMAIL SYSTEM]</div>
-                    <div style="font-size: 14px; font-weight: 600;">Your SavePlate Verification Code is:</div>
-                    <div id="simulated-code" style="font-size: 26px; font-weight: 700; color: var(--accent-amber); letter-spacing: 4px; margin-top: 4px;">123456</div>
-                </div>
+                <p class="subtitle">Open your authenticator app (Google Authenticator, Authy, etc.) and enter the current 6-digit code for SavePlate.</p>
 
                 <form id="verification-form" novalidate>
                     <div class="form-group" id="verification-code-group">
                         <label for="verification-code">Enter 6-Digit Code</label>
-                        <input type="text" id="verification-code" class="form-control" placeholder="000000" maxlength="6" style="text-align: center; letter-spacing: 8px; font-size: 20px; font-weight: 700;">
-                        <div class="error-message">Incorrect 6-digit code. Please try again.</div>
+                        <input type="text" id="verification-code" class="form-control" placeholder="000000" maxlength="6" inputmode="numeric" autocomplete="one-time-code" style="text-align: center; letter-spacing: 8px; font-size: 20px; font-weight: 700;">
+                        <div class="error-message">Incorrect code. Please try again.</div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Verify & Create Account</button>
+                    <button type="submit" class="btn btn-primary btn-block">Verify & Log In</button>
                 </form>
                 <p class="auth-switch-text">
                     <a href="#" id="cancel-2fa">Cancel and return</a>
@@ -639,6 +632,7 @@
 
     <!-- Load Application scripts in order -->
     <script src="js/storage.js"></script>
+    <script src="js/totp.js"></script>
     <script src="js/main.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/inventory.js"></script>

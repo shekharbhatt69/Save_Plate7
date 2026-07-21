@@ -196,6 +196,28 @@ const db = {
             this.saveUsers(users);
         }
 
+        // Seed a second demo account with 2FA already switched on so the
+        // authenticator flow can be tried immediately with any TOTP app
+        // (Google Authenticator, Authy, etc.) using the setup key below.
+        let demo2faUser = users.find(u => u.email === 'demo2fa@saveplate.com');
+        if (!demo2faUser) {
+            demo2faUser = {
+                id: 'usr_demo_2fa',
+                name: 'Demo 2FA User',
+                email: 'demo2fa@saveplate.com',
+                password: 'demo123',
+                householdSize: 2,
+                totpSecret: 'JBSWY3DPEHPK3PXP', // classic RFC test-vector key: add this in your authenticator app to log in
+                privacy: {
+                    showDonations: true,
+                    emailAlerts: true,
+                    enable2FA: true
+                }
+            };
+            users.push(demo2faUser);
+            this.saveUsers(users);
+        }
+
         // 2. Seed Inventory for Demo User (if inventory is empty)
         let allItems = localStorage.getItem(STORAGE_KEYS.INVENTORY) ? JSON.parse(localStorage.getItem(STORAGE_KEYS.INVENTORY)) : null;
         if (!allItems) {
