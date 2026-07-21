@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Save_Plate7 - BIT216 Project Schedule" company="BIT216 Software Engineering Principles" webLink="https://github.com/shekharbhatt69/Save_Plate7" view-date="2026-05-17" view-index="0" version="3.4.3394" locale="en_NP">
+    <description><![CDATA[SavePlate - BIT216 Project Schedule
+Assignment 1 (Planning and Design): 22 May - 12 June 2026
+Assignment 2 (Coding and Testing): 13 June - 24 June 2026
+Final Submission: 25 June 2026
+Team: Shekhar Bhatt (Project Manager), Manish Bhatta (Developer), Nikhil Tamrakar (Designer)
+Saturdays and Sundays are non-working days.]]></description>
+    <view zooming-state="default:5" id="gantt-chart">
+        <field id="tpd3" name="Name" width="418" order="0"/>
+        <field id="tpd4" name="Begin date" width="134" order="1"/>
+        <field id="tpd5" name="End date" width="134" order="2"/>
+        <field id="tpd6" name="Duration" width="85" order="3"/>
+        <field id="tpd12" name="Cost" width="235" order="4"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+        <option id="divider" value="0.5991228070175438"/>
+        <filters>
+            <filter title="filter.completedTasks" description="" is-built-in="true" is-enabled="false"/>
+            <filter title="filter.dueTodayTasks" description="" is-built-in="true" is-enabled="false"/>
+            <filter title="filter.overdueTasks" description="" is-built-in="true" is-enabled="false"/>
+            <filter title="filter.inProgressTodayTasks" description="" is-built-in="true" is-enabled="false"/>
+        </filters>
+        <option id="color.recent"><![CDATA[#1f3864 #2e75b6 #1e7145 #4b0082 #c55a11 #c00000]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="453" order="0"/>
+        <field id="1" name="Default role" width="174" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="1" uid="05fbb609fc7b4b6e9af33f59b06b73c4" name="ASSIGNMENT 1 - PLANNING AND DESIGN (22 May - 12 Jun)" color="#1f5d39" meeting="false" start="2026-05-22" duration="16" complete="0" expand="true">
+            <task id="2" uid="a82cde2f8db7429b8176dbd4acb04deb" name="Phase 1: Project Initiation" color="#1f5d39" meeting="false" start="2026-05-22" duration="3" complete="0" expand="true">
+                <task id="3" uid="09f2415baf274689898cc85ae339fa85" name="Read brief and form team" color="#2f7d4f" meeting="false" start="2026-05-22" duration="2" complete="0" expand="true"/>
+                <task id="4" uid="6ee0d8d08e3042479c0a0122bbaba254" name="GitHub repo setup and branches" color="#2f7d4f" meeting="false" start="2026-05-26" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="5" uid="ea339c9702604b74932a3fa408b75111" name="Phase 2: Project Plan Document" color="#1f5d39" meeting="false" start="2026-05-27" duration="8" complete="0" expand="true">
+                <task id="6" uid="65b09c8903ae409e8928ace1584487b6" name="Overview and Aims (Sec 1-2)" color="#2f7d4f" meeting="false" start="2026-05-27" duration="2" complete="0" expand="true"/>
+                <task id="7" uid="5911d085e6e04eb7b6f9e0d075667890" name="Objectives and Scope (Sec 3-4)" color="#2f7d4f" meeting="false" start="2026-05-29" duration="2" complete="0" expand="true"/>
+                <task id="8" uid="2500cdd4fd2c4c55980e8946738a33fe" name="WBS and Gantt chart (Sec 5)" color="#2f7d4f" meeting="false" start="2026-06-02" duration="2" complete="0" expand="true"/>
+                <task id="9" uid="e97d26ad2125400dbe69f73d15fa15ba" name="Technical and Risk (Sec 6-7)" color="#2f7d4f" meeting="false" start="2026-06-04" duration="2" complete="0" expand="true"/>
+            </task>
+            <task id="10" uid="60e6fba78c9e4a01a5abce47d1eea4ab" name="Phase 3: Review and Submit A1" color="#1f5d39" meeting="false" start="2026-06-08" duration="5" complete="0" expand="true">
+                <task id="11" uid="bdb3ddb6116b4ad5960f547931773f1f" name="Peer review and formatting" color="#c47d1a" meeting="false" start="2026-06-08" duration="2" complete="0" expand="true"/>
+                <task id="12" uid="d1445a7dd98f4368a850359480cb71cb" name="Final commit and submit A1" color="#b3261e" meeting="false" start="2026-06-12" duration="1" complete="0" expand="true"/>
+            </task>
+        </task>
+        <task id="13" uid="dab2920307f24ee7be9eeab03f6889a9" name="MILESTONE: Assignment 1 Due - 12 June" color="#b3261e" meeting="true" start="2026-06-12" duration="0" complete="0" expand="true"/>
+        <task id="14" uid="7ef95c823cd64cc3a6f4573c1586abae" name="ASSIGNMENT 2 - CODING AND TESTING (13 Jun - 24 Jun)" color="#1f5d39" meeting="false" start="2026-06-15" duration="8" complete="0" expand="true">
+            <task id="15" uid="055e2b7637f64b2c9b5c385c5a8bf179" name="Phase 4: Coding the Use Cases" color="#1f5d39" meeting="false" start="2026-06-15" duration="5" complete="0" expand="true">
+                <task id="16" uid="87d16725d8724cfc95d43f277371ef63" name="Shared - storage and routing" color="#2f7d4f" meeting="false" start="2026-06-15" duration="1" complete="0" expand="true"/>
+                <task id="17" uid="1c6e28f82fd243f0b90a9a201167f5bb" name="UC1 Register and UC4 Analytics (Shekhar)" color="#2f7d4f" meeting="false" start="2026-06-16" duration="3" complete="0" expand="true"/>
+                <task id="18" uid="c639514aef97415f89240a5834c21f27" name="UC2 Inventory and UC5 Notifications (Manish)" color="#2f7d4f" meeting="false" start="2026-06-16" duration="3" complete="0" expand="true"/>
+                <task id="19" uid="b3d632f6a8c94a6f9dc1706bb38bcda3" name="UC3 Browse and UC6 Meal Planner (Nikhil)" color="#2f7d4f" meeting="false" start="2026-06-16" duration="2" complete="0" expand="true"/>
+                <task id="20" uid="80a70d6ab52a46e494ad7b8ff06d9672" name="Integration and styling (Shekhar)" color="#2f7d4f" meeting="false" start="2026-06-19" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="21" uid="1b0903634b4f4d36be65f34f4ede75ef" name="Phase 5: Testing" color="#1f5d39" meeting="false" start="2026-06-22" duration="2" complete="0" expand="true">
+                <task id="22" uid="2e2a93d905ca4cda94ff4b19d2501796" name="Write test cases UC1-UC6 (Shekhar)" color="#c47d1a" meeting="false" start="2026-06-22" duration="1" complete="0" expand="true"/>
+                <task id="23" uid="9f0f99d4caff47c58c550cab8bde004f" name="Manual testing positive and negative (Manish)" color="#c47d1a" meeting="false" start="2026-06-23" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="24" uid="f98a49d67516458390b417b436a16900" name="Phase 6: Document and Finalise" color="#1f5d39" meeting="false" start="2026-06-24" duration="1" complete="0" expand="true">
+                <task id="25" uid="22d5d626b29d44aaafcf7115d979cbfb" name="Compile test document and review (Shekhar)" color="#b3261e" meeting="false" start="2026-06-24" duration="1" complete="0" expand="true"/>
+            </task>
+        </task>
+        <task id="26" uid="dca387e9bd2e40569487dd6202c3d248" name="MILESTONE: Final Submission - 25 June 5:00 PM" color="#b3261e" meeting="true" start="2026-06-25" duration="0" complete="0" expand="true"/>
+    </tasks>
+    <resources>
+        <resource id="0" name="Shekhar Bhatt" function="Default:1" contacts="" phone=""/>
+        <resource id="1" name="Manish Bhatta" function="Default:2" contacts="" phone=""/>
+        <resource id="2" name="Nikhil Tamrakar" function="Default:3" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="3" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="4" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="6" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="8" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="9" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="11" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="12" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="16" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="17" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="20" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="22" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="25" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="3" resource-id="1" function="Default:2" responsible="false" load="100.0"/>
+        <allocation task-id="7" resource-id="1" function="Default:2" responsible="true" load="100.0"/>
+        <allocation task-id="9" resource-id="1" function="Default:2" responsible="false" load="100.0"/>
+        <allocation task-id="11" resource-id="1" function="Default:2" responsible="false" load="100.0"/>
+        <allocation task-id="18" resource-id="1" function="Default:2" responsible="true" load="100.0"/>
+        <allocation task-id="23" resource-id="1" function="Default:2" responsible="true" load="100.0"/>
+        <allocation task-id="19" resource-id="2" function="Default:3" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
