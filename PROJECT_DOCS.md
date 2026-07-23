@@ -5201,3 +5201,4 @@
 ## Supplementary documentation entry 1
 ## Supplementary documentation entry 2
 ## Supplementary documentation entry 3
+## Supplementary documentation entry 4
