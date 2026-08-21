@@ -22,8 +22,15 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  /* Reporter to use. See https://playwright.dev/docs/test-reporters
+   * outputFolder/outputFile default to playwright-report/latest so a plain
+   * `npx playwright test` never clobbers the run-history index.html that
+   * `npm test` (scripts/record-test-run.mjs) builds at playwright-report/index.html. */
+  reporter: [
+    ['html', { outputFolder: process.env.PLAYWRIGHT_HTML_REPORT || 'playwright-report/latest', open: 'never' }],
+    ['json', { outputFile: process.env.PLAYWRIGHT_JSON_REPORT || 'playwright-report/latest/results.json' }],
+    ['list'],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
@@ -31,6 +38,9 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+
+    /* Capture a screenshot at the end of every test (not just failures), attached to the HTML report. */
+    screenshot: 'on',
   },
 
   /* Configure projects for major browsers */

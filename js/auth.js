@@ -24,22 +24,70 @@ let loginVerificationState = {
     user: null
 };
 
+// Stops the login box's live TOTP code display, if one is currently running.
+let stopLoginLiveDisplay = null;
+function clearLoginLiveDisplay() {
+    if (stopLoginLiveDisplay) {
+        stopLoginLiveDisplay();
+        stopLoginLiveDisplay = null;
+    }
+}
+
+/**
+ * Starts a self-updating live display of the current TOTP code for a secret,
+ * so the app can act as its own "authenticator" without a separate device.
+ * Refreshes every second and keeps an input field pre-filled with the code,
+ * but backs off auto-filling if the field's value diverges from what it last
+ * wrote (e.g. a test or user deliberately typed a different code), so manual
+ * entry of a wrong code for validation purposes still works as expected.
+ * Returns a function that stops the live updates.
+ */
+function startLiveTOTPDisplay(secret, { codeEl, countdownEl, inputEl }) {
+    let stopped = false;
+    let lastAutoFilled = '';
+
+    async function tick() {
+        if (stopped) return;
+        const code = await generateTOTP(secret);
+        const secondsLeft = 30 - (Math.floor(Date.now() / 1000) % 30);
+
+        if (codeEl) codeEl.textContent = code;
+        if (countdownEl) countdownEl.textContent = `Refreshes in ${secondsLeft}s`;
+
+        if (inputEl && (inputEl.value === '' || inputEl.value === lastAutoFilled)) {
+            inputEl.value = code;
+        }
+        lastAutoFilled = code;
+    }
+
+    tick();
+    const intervalId = setInterval(tick, 1000);
+
+    return () => {
+        stopped = true;
+        clearInterval(intervalId);
+    };
+}
+
 /**
  * Opens a modal walking the user through TOTP authenticator setup: shows the
- * secret key and asks them to confirm it with a code from their app. Resolves
- * true once confirmed, false if the user cancels.
+ * secret key (for a real authenticator app) plus a live auto-filled code (for
+ * quick/demo use without one), and asks for confirmation. Resolves true once
+ * confirmed, false if the user cancels.
  */
 function promptTOTPSetup(secret) {
     return new Promise((resolve) => {
         let settled = false;
         const cancelBtn = document.getElementById('modal-cancel-btn');
         const closeBtn = document.getElementById('modal-close-btn');
+        let stopLiveDisplay = null;
 
         const finish = (result) => {
             if (settled) return;
             settled = true;
             cancelBtn.removeEventListener('click', onCancel);
             closeBtn.removeEventListener('click', onCancel);
+            if (stopLiveDisplay) stopLiveDisplay();
             resolve(result);
         };
         const onCancel = () => finish(false);
@@ -47,21 +95,26 @@ function promptTOTPSetup(secret) {
         const groupedSecret = secret.match(/.{1,4}/g).join(' ');
         const html = `
             <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
-                Add this key to Google Authenticator, Authy, or any TOTP app (use "Enter a setup key" / manual entry), then confirm with the 6-digit code it generates.
+                The code below is already filled in for you. If you'd rather use a real authenticator app (Google Authenticator, Authy, etc.), add the setup key there instead ("Enter a setup key" / manual entry).
             </p>
+            <div style="background-color: var(--accent-green-bg); border: 1.5px dashed var(--accent-green); padding: 15px; border-radius: var(--radius-sm); margin-bottom: 16px; text-align: center;">
+                <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; font-weight: 500;">CURRENT CODE</div>
+                <div id="totp-live-code" style="font-size: 28px; font-weight: 700; letter-spacing: 6px; font-family: monospace; color: var(--accent-green);">------</div>
+                <div id="totp-live-countdown" style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Refreshes in 30s</div>
+            </div>
             <div style="background-color: var(--accent-amber-bg); border: 1.5px dashed var(--accent-amber); padding: 15px; border-radius: var(--radius-sm); margin-bottom: 20px; text-align: center;">
-                <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; font-weight: 500;">SETUP KEY</div>
+                <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; font-weight: 500;">SETUP KEY (for a real authenticator app)</div>
                 <div id="totp-secret-display" style="font-size: 18px; font-weight: 700; letter-spacing: 2px; font-family: monospace; word-break: break-all;">${escapeHTML(groupedSecret)}</div>
                 <button type="button" id="totp-copy-btn" class="btn btn-secondary" style="margin-top: 10px; font-size: 12px; padding: 6px 12px;">Copy Key</button>
             </div>
             <div class="form-group" id="totp-verify-group">
-                <label for="totp-verify-input">Enter the 6-digit code from your app</label>
+                <label for="totp-verify-input">6-digit code</label>
                 <input type="text" id="totp-verify-input" class="form-control" placeholder="000000" maxlength="6" inputmode="numeric" autocomplete="one-time-code" style="text-align: center; letter-spacing: 8px; font-size: 20px; font-weight: 700;">
                 <div class="error-message">Incorrect code. Please try again.</div>
             </div>
         `;
 
-        openModal('Set Up Authenticator App', html, async () => {
+        openModal('Set Up 2FA', html, async () => {
             const input = document.getElementById('totp-verify-input');
             const group = document.getElementById('totp-verify-group');
             const confirmBtn = document.getElementById('modal-confirm-btn');
@@ -86,6 +139,12 @@ function promptTOTPSetup(secret) {
             navigator.clipboard?.writeText(secret);
             toast('Setup key copied to clipboard.');
         });
+
+        stopLiveDisplay = startLiveTOTPDisplay(secret, {
+            codeEl: document.getElementById('totp-live-code'),
+            countdownEl: document.getElementById('totp-live-countdown'),
+            inputEl: document.getElementById('totp-verify-input')
+        });
     });
 }
 
@@ -101,18 +160,25 @@ function showAuthScreen() {
 }
 
 function showLoginBox() {
+    clearLoginLiveDisplay();
     document.getElementById('auth-login-box').classList.remove('hidden');
     document.getElementById('auth-register-box').classList.add('hidden');
     document.getElementById('auth-2fa-box').classList.add('hidden');
 }
 
 function showRegisterBox() {
+    clearLoginLiveDisplay();
     document.getElementById('auth-login-box').classList.add('hidden');
     document.getElementById('auth-register-box').classList.remove('hidden');
     document.getElementById('auth-2fa-box').classList.add('hidden');
 }
 
-function showLoginVerificationBox() {
+/**
+ * Shows the login-time 2FA box with a live, auto-filled TOTP code (backed by
+ * the same RFC 6238 algorithm as a real authenticator app), so logging in
+ * doesn't require a separate device.
+ */
+function showLoginVerificationBox(secret) {
     document.getElementById('auth-login-box').classList.add('hidden');
     document.getElementById('auth-register-box').classList.add('hidden');
     document.getElementById('auth-2fa-box').classList.remove('hidden');
@@ -121,6 +187,13 @@ function showLoginVerificationBox() {
     const codeInput = document.getElementById('verification-code');
     codeInput.value = '';
     codeInput.parentElement.classList.remove('invalid');
+
+    clearLoginLiveDisplay();
+    stopLoginLiveDisplay = startLiveTOTPDisplay(secret, {
+        codeEl: document.getElementById('login-live-code'),
+        countdownEl: document.getElementById('login-live-countdown'),
+        inputEl: codeInput
+    });
 }
 
 // --- UI Navigation Bindings ---
@@ -137,6 +210,7 @@ document.getElementById('go-to-login').addEventListener('click', (e) => {
 
 document.getElementById('cancel-2fa').addEventListener('click', (e) => {
     e.preventDefault();
+    clearLoginLiveDisplay();
     loginVerificationState = { user: null };
     showLoginBox();
 });
@@ -285,7 +359,7 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
     // Check if 2FA is enabled in settings
     if (user.privacy && user.privacy.enable2FA && user.totpSecret) {
         loginVerificationState = { user: user };
-        showLoginVerificationBox();
+        showLoginVerificationBox(user.totpSecret);
     } else {
         // Start user session
         db.setCurrentUser(user);
@@ -323,6 +397,7 @@ document.getElementById('verification-form').addEventListener('submit', async fu
     }
 
     codeEl.parentElement.classList.remove('invalid');
+    clearLoginLiveDisplay();
 
     // Session Login verification completion
     db.setCurrentUser(user);

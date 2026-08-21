@@ -86,10 +86,16 @@
                 </p>
             </div>
 
-            <!-- 2FA Verification View (real TOTP authenticator app code) -->
+            <!-- 2FA Verification View (real TOTP code, auto-displayed for convenience) -->
             <div id="auth-2fa-box" class="auth-box hidden">
                 <h2>2FA Verification</h2>
-                <p class="subtitle">Open your authenticator app (Google Authenticator, Authy, etc.) and enter the current 6-digit code for SavePlate.</p>
+                <p class="subtitle">Enter the current 6-digit code below (already filled in for you), or from your authenticator app if you set one up.</p>
+
+                <div style="background-color: var(--accent-green-bg); border: 1.5px dashed var(--accent-green); padding: 15px; border-radius: var(--radius-sm); margin-bottom: 20px; text-align: center;">
+                    <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; font-weight: 500;">CURRENT CODE</div>
+                    <div id="login-live-code" style="font-size: 28px; font-weight: 700; letter-spacing: 6px; font-family: monospace; color: var(--accent-green);">------</div>
+                    <div id="login-live-countdown" style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Refreshes in 30s</div>
+                </div>
 
                 <form id="verification-form" novalidate>
                     <div class="form-group" id="verification-code-group">

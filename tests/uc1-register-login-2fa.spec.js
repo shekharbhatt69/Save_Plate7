@@ -102,7 +102,7 @@ test.describe('UC1: Two-factor authenticator (real TOTP)', () => {
     await page.getByRole('button', { name: 'Register Account' }).click();
 
     // Setup modal appears with the generated secret key.
-    await expect(page.getByRole('heading', { name: 'Set Up Authenticator App' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Set Up 2FA' })).toBeVisible();
     const rawSecret = await page.locator('#totp-secret-display').textContent();
     const secret = rawSecret.replace(/\s+/g, '');
     expect(secret).toMatch(/^[A-Z2-7]{32}$/);

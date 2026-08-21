@@ -5,7 +5,8 @@
     "puppeteer-core": "^25.2.1"
   },
   "scripts": {
-    "test": "playwright test",
+    "test": "node scripts/record-test-run.mjs",
+    "test:quick": "playwright test",
     "test:ui": "playwright test --ui"
   }
 }
